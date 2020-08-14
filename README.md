@@ -1,5 +1,5 @@
 # Polymer-Simulation
- Simulação e Análise de Dados Gerados com Python
+ Simulação e Análise de Dados com Python (baseado no código do https://github.com/ThiElf), com orientação do Dr. José Rafael Bordin (http://lattes.cnpq.br/9477024092198309).
  
  Para realizar a Dinâmica Molecular do sistema polímérico é preciso instalar o pacote de códigos ESPREesSo (disponível em http://espressomd.org/), e ter a biblioteca Numpy (https://github.com/numpy/numpy.git).
  
