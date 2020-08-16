@@ -1,0 +1,8 @@
+# Cluster list (6 data points):
+# "Cluster Identifier" "Cluster Size" "Center of Mass.X" "Center of Mass.Y" "Center of Mass.Z"
+1 9940 12.0881522133 11.9060222334 11.549560664 
+2 20 18.1556 -1.7948 26.8449 
+3 10 25.8244 -1.5768 26.6014 
+4 10 14.7689 22.0135 27.2748 
+5 10 30.1434 0.6345 7.2666 
+6 10 29.7262 -7.1032 3.3871 
