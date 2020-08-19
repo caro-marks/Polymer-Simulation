@@ -22,7 +22,7 @@ def Mods(Fracs, Beads, Denss):
 
                 data = import_file('./frac_'+str(Frac)+'/m_'+str(Bead)+'/d_'+str(Dens)+'/final_snapshot.xyz')
 
-                modifier = CoordinationAnalysisModifier(cutoff = 2.5, partial  = True)
+                modifier = CoordinationAnalysisModifier(cutoff = 3, partial  = True, number_of_bins = 400)
 
                 data.modifiers.append(modifier)
 
