@@ -1,4 +1,0 @@
-# Cluster list (2 data points):
-# "Cluster Identifier" "Cluster Size" "Center of Mass.X" "Center of Mass.Y" "Center of Mass.Z"
-1 25974 17.8491047586 17.8284425579 17.940513706 
-2 26 18.6191923077 -4.1811153846 33.6977307692 

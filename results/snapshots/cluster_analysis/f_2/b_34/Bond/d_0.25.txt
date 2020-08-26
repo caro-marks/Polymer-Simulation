@@ -1,7 +1,0 @@
-# Cluster list (5 data points):
-# "Cluster Identifier" "Cluster Size"
-1 33864 
-2 34 
-3 34 
-4 34 
-5 34 
