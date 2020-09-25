@@ -2,15 +2,12 @@ from ovito.modifiers import ClusterAnalysisModifier
 from ovito.io import import_file, export_file
 import os
 
-cutter = ClusterAnalysisModifier(cutoff = 1.3, sort_by_size = True)
-
 Beads_range=[x for x in range(10,50,4) if x not in (38,46)] # # # #    monomer's range
 Dens_range=[x/100 for x in range(0,81,5) if x>0] # # # #    dens' range
 Frac_range=[x/100 for x in range(0,100,25) if x!=0] # # # #    frac' range
+pre = 'results/snapshots/rdf/f_'
 
-pre = 'results/snapshots/cluster_analysis/f_'
-
-def Cut(pre, Fracs, Beads, Denss, cutter):
+def Cut(Fracs, Beads, Denss):
 
     for Frac in Fracs:
 
@@ -22,14 +19,17 @@ def Cut(pre, Fracs, Beads, Denss, cutter):
 
                 data = import_file('./frac_'+str(Frac)+'/m_'+str(Bead)+'/d_'+str(Dens)+'/final_snapshot.xyz')
 
-                data.modifiers.append(cutter)
+                for cut in CutOffs:
+                    cutter = ClusterAnalysisModifier(cutoff = cut, sort_by_size = True)
 
-                export_file(data, str(pre)+str(int((1-Frac)*10%10))+"/b_"+str(Bead)+"/d_"+str(Dens)+".txt", "txt/table", key = 'clusters')
+                    data.modifiers.append(cutter)
 
-def GenerateData(pre, fracs, beads, denss, cutter):
+                    export_file(data, str(pre)+str(int((1-Frac)*10%10))+"/b_"+str(Bead)+"/d_"+str(Dens)+".txt", "txt/table", key = 'clusters')
 
-    Cut(pre, fracs, beads, denss, cutter)
+def GenerateData(fracs, beads, denss):
+
+    Cut(fracs, beads, denss)
     
     exit()
 
-GenerateData(pre, Frac_range, Beads_range, Dens_range, cutter)
+GenerateData(Frac_range, Beads_range, Dens_range)
