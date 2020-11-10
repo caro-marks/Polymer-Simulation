@@ -21,8 +21,10 @@ def Mods(Fracs, Beads, Denss):
             for Dens in Denss:
 
                 data = import_file('./frac_'+str(Frac)+'/m_'+str(Bead)+'/d_'+str(Dens)+'/final_snapshot.xyz')
+            
+                co = ((Bead*1000)/Dens)**(1/3)
 
-                modifier = CoordinationAnalysisModifier(cutoff = 2.9, partial  = True, number_of_bins = 180)
+                modifier = CoordinationAnalysisModifier(cutoff = co/2, partial  = True, number_of_bins = 180)
                 data.modifiers.append(modifier)
 
                 export_file(data, str(pre)+str(f)+"/b_"+str(Bead)+"/d_"+str(Dens)+".txt", "txt/table")
