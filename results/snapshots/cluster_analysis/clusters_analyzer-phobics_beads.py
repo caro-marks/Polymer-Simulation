@@ -6,7 +6,7 @@ import os
 Beads_range=[x for x in range(10,50,4) if x not in (38,46)] # # # #    monomer's range
 Dens_range=[x/100 for x in range(0,81,5) if x>0] # # # #    dens' range
 Frac_range=[abs(1-x/100) for x in range(0,100,25) if x!=0] # # # #    frac' range
-Cut_range = [x/10 for x in range(11,21)]
+Cut_range = [x/100 for x in range(112,130, 2)]
 
 def Cut(Fracs, Beads, Denss, Cut):
 
@@ -50,7 +50,7 @@ def Cut(Fracs, Beads, Denss, Cut):
             print(f'Bead {Bead} finalizado.')
             print('')
 
-        table.to_csv(f'./results/snapshots/cluster_analysis/cuts-phobics/{Cut}/Frac_{Frac}')
+        table.to_csv(f'./results/snapshots/cluster_analysis/cuts-phobics/{Cut}/Frac_{Frac}.csv')
 
         print(f'Frac {Frac} finalizado.')
         print('')
